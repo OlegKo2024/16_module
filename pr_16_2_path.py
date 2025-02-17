@@ -1,11 +1,8 @@
 from typing import Annotated
 from fastapi import FastAPI, Path, Query
 
-# Создаем экземпляр приложения FastAPI
 app = FastAPI()
 
-
-# Маршрут к страницам пользователей с параметром в пути - "/user/{user_id}"
 
 @app.get('/user/{user_id}')
 async def get_user(user_id: Annotated[int, Path(ge=1,
